@@ -13,7 +13,7 @@ func NewStorage[T any](fileName string) *Storage[T] {
 	return &Storage[T]{FileName: fileName}
 }
 
-func (s *Storage[T]) save(data T) error {
+func (s *Storage[T]) Save(data T) error {
 	fileData, err := json.MarshalIndent(data, "", "    ")
 
 	if err != nil {
